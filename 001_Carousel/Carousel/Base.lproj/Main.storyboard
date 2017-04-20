@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Carousel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButterflyBridge" translatesAutoresizingMaskIntoConstraints="NO" id="xWl-aO-8cU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="667" id="Kj1-hI-0Eb"/>
+                                    <constraint firstAttribute="width" constant="375" id="wpP-8P-SUb"/>
+                                </constraints>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-3R-pxD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M81-np-QRQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GNV-ov-Hga">
+                                            <rect key="frame" x="0.0" y="70" width="375" height="527"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jD3-bk-GWu">
+                                                <size key="itemSize" width="292" height="463"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="carouselCell" id="Vcr-2r-lpe" customClass="CollectionViewCell" customModule="Carousel" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="32" width="292" height="463"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="292" height="463"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UzQ-jJ-Ekr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="292" height="463"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="292" id="gQ0-75-Dlt"/>
+                                                                    <constraint firstAttribute="height" constant="463" id="lG9-gg-45g"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="UzQ-jJ-Ekr" secondAttribute="bottom" id="Q3A-gf-Y9P"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UzQ-jJ-Ekr" secondAttribute="trailing" id="dPn-7Q-o6N"/>
+                                                        <constraint firstItem="UzQ-jJ-Ekr" firstAttribute="top" secondItem="Vcr-2r-lpe" secondAttribute="top" id="m3f-4Z-9q9"/>
+                                                        <constraint firstItem="UzQ-jJ-Ekr" firstAttribute="leading" secondItem="Vcr-2r-lpe" secondAttribute="leading" id="sxo-MR-MTu"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="celllImage" destination="UzQ-jJ-Ekr" id="vB6-WI-YVq"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="BYZ-38-t0r" id="2Sl-Kr-9jv"/>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="8tC-Tp-L2w"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GNV-ov-Hga" firstAttribute="leading" secondItem="M81-np-QRQ" secondAttribute="leading" id="Ank-E6-yQR"/>
+                                        <constraint firstAttribute="bottom" secondItem="GNV-ov-Hga" secondAttribute="bottom" constant="70" id="Mmh-aa-7By"/>
+                                        <constraint firstAttribute="trailing" secondItem="GNV-ov-Hga" secondAttribute="trailing" id="rZd-Te-ZhD"/>
+                                        <constraint firstItem="GNV-ov-Hga" firstAttribute="top" secondItem="M81-np-QRQ" secondAttribute="top" constant="70" id="yPg-2j-5OU"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cwN-3R-pxD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4b0-kP-d06"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cwN-3R-pxD" secondAttribute="bottom" id="Wz5-5t-2E2"/>
+                            <constraint firstAttribute="trailing" secondItem="cwN-3R-pxD" secondAttribute="trailing" id="aF3-Cx-j73"/>
+                            <constraint firstItem="xWl-aO-8cU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dvo-At-5kP"/>
+                            <constraint firstItem="cwN-3R-pxD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fxQ-HB-4fS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xWl-aO-8cU" secondAttribute="bottom" id="ru6-ht-4jl"/>
+                            <constraint firstAttribute="trailing" secondItem="xWl-aO-8cU" secondAttribute="trailing" id="vfe-eU-Tmw"/>
+                            <constraint firstItem="xWl-aO-8cU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zuq-xB-rpG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgImage" destination="xWl-aO-8cU" id="ar1-QY-yqV"/>
+                        <outlet property="collectionView" destination="GNV-ov-Hga" id="9O8-b2-cjM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ButterflyBridge" width="320" height="215"/>
+    </resources>
+</document>
